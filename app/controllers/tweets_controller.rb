@@ -1,6 +1,7 @@
 class TweetsController < ApplicationController
   #runs the set_tweet method below at the start of show, edit, etc
   before_action :set_tweet, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /tweets
   # GET /tweets.json
